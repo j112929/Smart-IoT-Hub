@@ -22,4 +22,5 @@ Code Discription:
 --test/java/zayn  
 ---test                     //Unit test folder  
 
-
+-data
+--myIoTHub.db         //sqlite3 database file
