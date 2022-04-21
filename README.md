@@ -9,19 +9,18 @@ Code Discription:
 ----
 
 - public
--- index.html.               //The index page of the frontend webpage.  
--- setGroup.html             //A test page for Grouping functions  
--- Web                     //Front-end pages using ReactJS  
+ -- index.html.               //The index page of the frontend webpage.  
+ -- setGroup.html             //A test page for Grouping functions  
+ -- Web                     //Front-end pages using ReactJS  
 - src  
--- main  
---- java/zayn
----- iot_hub          //SpringBoot Application with Restful Service, Connect to Mysql database through Hibernate with Spring Data JPA  
----- iot_sim          //Server side(Received MQTT message and relative functions)  
------ http_server  //HTTP server folder  
---- resources  
--- test/java/zayn  
---- test                     //Unit test folder  
+ -- main  
+  --- java/zayn
+    ---- iot_hub          //SpringBoot Application with Restful Service, Connect to Mysql database through Hibernate with Spring Data JPA  
+    ---- iot_sim          //Server side(Received MQTT message and relative functions)  
+     ----- http_server  //HTTP server folder  
+  --- resources  
+ -- test/java/zayn  
+  --- test                     //Unit test folder  
 
-- data
-
--- myIoTHub.db         //sqlite3 database file
+- data 
+  -- myIoTHub.db         //sqlite3 database file
