@@ -6,5 +6,5 @@
     "z"],
   "mqttBroker": "tcp://127.0.0.1",
   "mqttClientId": "iot_sim_ex",
-  "mqttTopicPrefix": "iot_ece448/"
+  "mqttTopicPrefix": "iot_ece448"
 }

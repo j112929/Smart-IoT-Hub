@@ -33,12 +33,10 @@ class IoTHubApp extends React.Component {
 							plugSelected={this.state.plugSelected} />
 					</div>
 				</div>
-
 				<div className="row">
-				<h3>Manage Groups and Members</h3>
-				<Members />
+					<h3>Manage Groups and Members</h3>
+					<Members placeholder="e.g. a,b,c"/>
 				</div>
-
 			</div>);
 	}
 }

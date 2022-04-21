@@ -10,28 +10,23 @@ plugins {
 defaultTasks 'clean', 'test', 'jacocoTestReport'
 
 compileJava.options.encoding = 'UTF-8'
-group = 'zayn'
+group = 'iot_ece448'
 version = '1.0.0'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 buildDir = 'build'
 
 repositories {
-	mavenCentral()
+	jcenter()
 }
 
 dependencies {
-	// compile('org.springframework.boot:spring-boot-starter-aop')
-	// compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	// compile('org.springframework.boot:spring-boot-starter-actuator')
-	// compile('org.springframework.boot:spring-boot-starter-web')
-	
-	// runtime('mysql:mysql-connector-java')
-	// testCompile('org.springframework.boot:spring-boot-starter-test')
 	implementation(
 		'org.apache.httpcomponents:fluent-hc:4.5.9',
 		'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.2',
-		'org.springframework.boot:spring-boot-starter-web')
+		'org.springframework.boot:spring-boot-starter-web',
+		'org.xerial:sqlite-jdbc:3.7.2'
+		)
 	testImplementation('junit:junit:4.12')
 }
 
@@ -57,26 +52,26 @@ sourceSets {
 
 task iot_sim(type: JavaExec, dependsOn: [test, jacocoTestReport]) {
 	classpath sourceSets.main.runtimeClasspath
-	main = 'zayn.iot_sim.Main'
+	main = 'ece448.iot_sim.Main'
 	if (project.hasProperty("config"))
 		args project.getProperty('config')
 }
 
 task iot_sim_ex(type: JavaExec, dependsOn: [test, jacocoTestReport]) {
 	classpath sourceSets.main.runtimeClasspath
-	main = 'zayn.iot_sim.Main'
+	main = 'ece448.iot_sim.Main'
 	args 'simConfigEx.json'
 }
 
 task iot_hub(type: JavaExec, dependsOn: [test, jacocoTestReport]) {
 	classpath sourceSets.main.runtimeClasspath
-	main = 'zayn.iot_hub.Main'
+	main = 'ece448.iot_hub.Main'
 }
 
-5.times { proj ->
+6.times { proj ->
 	task "grade_p$proj"(type: JavaExec, dependsOn: [test, jacocoTestReport]) {
 		classpath sourceSets.main.runtimeClasspath
-		main = "zayn.grading.GradeP$proj"
+		main = "ece448.grading.GradeP$proj"
 	}
 }
 

@@ -1,7 +1,8 @@
 function plugAction(name, action) {
 	var url = "../api/plugs/" + name + "?action=" + action;
 	console.info("PlugDetails: request " + url);
-	fetch(url);
+	fetch(url).then(rsp => rsp.json())
+	.catch(err => console.error("Members: switchOn????", err));
 }
 
 /**
@@ -22,6 +23,9 @@ window.PlugDetails = function (props) {
 			</button>
 			<button className="btn-primary" onClick={() => plugAction(plug.name, "off")}>
 				Switch Off
+			</button>
+			<button className="btn-primary" onClick={() => plugAction(plug.name, "toggle")}>
+				Toggle
 			</button>
 		</div>);
 }
